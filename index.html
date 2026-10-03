@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pahadi Club | VIT Bhopal</title>
+<meta name="description" content="Pahadi Club, VIT Bhopal: celebrating the culture of Mountains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0e1b17; --pine:#16302a; --moss:#24493d; --snow:#f6f3ee; --mist:#cfd9d4;
+  --sun:#f2a30f; --rust:#b5361f; --mauve:#a99aa8;
+  --display:'Yatra One','Mukta',serif; --body:'Mukta',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--night);color:var(--snow);line-height:1.65;font-size:18px;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:12px 0;transition:background .3s}
+nav.solid{background:rgba(14,27,23,.92);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-size:1.25rem}
+.brand img,.brand .logo-fb{width:44px;height:44px;border-radius:50%;background:var(--snow);object-fit:cover}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{text-decoration:none;font-weight:600;font-size:.98rem;padding:4px 0;border-bottom:2px solid transparent}
+nav ul a:hover{border-color:var(--sun)}
+.burger{display:none;background:none;border:0;color:var(--snow);font-size:1.8rem;cursor:pointer}
+@media(max-width:760px){
+  .burger{display:block}
+  nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--night);padding:16px 24px 24px;display:none}
+  nav ul.open{display:flex}
+}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:620px;overflow:hidden;background:linear-gradient(#10243b 0%,#3a4a6b 38%,#d98e55 78%,#f2c27a 100%)}
+#snow{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none}
+.sun{position:absolute;left:50%;bottom:30%;width:min(34vw,240px);aspect-ratio:1;margin-left:calc(min(34vw,240px)/-2);border-radius:50%;background:radial-gradient(circle,#ffd36b 0%,var(--sun) 60%,rgba(242,163,15,0) 72%);animation:rise 3.2s cubic-bezier(.2,.7,.2,1) both;z-index:1}
+@keyframes rise{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:1}}
+.layer{position:absolute;left:-5%;width:110%;bottom:0;z-index:2;will-change:transform}
+.layer svg{display:block;width:100%;height:auto}
+.l1{bottom:22%;z-index:2}.l2{bottom:10%;z-index:3}.l3{bottom:-1px;z-index:4}
+.cloud{position:absolute;z-index:2;height:34px;width:200px;border-radius:40px;background:rgba(255,255,255,.28);filter:blur(10px);animation:drift linear infinite}
+@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+.hero-text{position:absolute;z-index:7;top:17%;left:0;right:0;text-align:center;padding:0 20px}
+.hero-text .deva{font-family:var(--display);font-size:clamp(1.2rem,3.2vw,1.9rem);color:var(--sun);animation:fade 1s 1.4s both}
+.hero-text h1{font-size:clamp(3rem,10vw,7rem);text-shadow:0 4px 30px rgba(0,0,0,.35);animation:fade 1s 1.7s both}
+.hero-text p{max-width:560px;margin:10px auto 22px;font-size:1.1rem;animation:fade 1s 2s both}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fade 1s 2.2s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;padding:12px 28px;border-radius:999px;background:var(--sun);color:#2a1a00;font-weight:700;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-3px);background:#ffbb33}
+.btn.ghost{background:transparent;color:var(--snow);border:2px solid var(--snow)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+
+/* SECTIONS */
+section{padding:96px 0;position:relative}
+.sec-title{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:14px}
+.sec-sub{max-width:620px;color:var(--mist);margin-bottom:44px}
+.light{background:var(--snow);color:#1c2a25}
+.light .sec-sub{color:#4b5b55}
+.ridge{display:block;width:100%;height:auto;margin-bottom:-1px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.states{display:grid;gap:16px}
+.state{padding:20px 22px;border-left:6px solid var(--sun);background:#fff;box-shadow:0 8px 24px rgba(20,40,32,.08)}
+.state:nth-child(2){border-color:var(--rust)}.state:nth-child(3){border-color:var(--moss)}
+.state h3{font-size:1.4rem;margin-bottom:4px}
+.state p{font-size:.98rem;color:#4b5b55;line-height:1.5}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr}}
+
+/* PATTERN (pahadi border) */
+.pattern{height:22px;background:
+ linear-gradient(135deg,var(--rust) 25%,transparent 25%) -11px 0/22px 22px,
+ linear-gradient(225deg,var(--sun) 25%,transparent 25%) -11px 0/22px 22px,
+ linear-gradient(315deg,var(--moss) 25%,transparent 25%) 0 0/22px 22px,
+ linear-gradient(45deg,var(--snow) 25%,transparent 25%) 0 0/22px 22px,#fff}
+
+/* EVENTS */
+.events{background:var(--pine)}
+.ev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+.ev{background:var(--night);border-radius:6px;overflow:hidden;transition:transform .35s;border:1px solid rgba(255,255,255,.08)}
+.ev:hover{transform:translateY(-8px) rotate(-.5deg)}
+.ev .ph{aspect-ratio:4/3;background:var(--moss);overflow:hidden}
+.ev .ph img{width:100%;height:100%;object-fit:contain;background:#0e1b17;transition:transform .6s}
+.ev:hover .ph img{transform:scale(1.07)}
+.ev .info{padding:20px 22px 24px}
+.ev h3{font-size:1.5rem;color:var(--sun)}
+.ev p{font-size:.98rem;color:var(--mist);margin-top:6px}
+
+/* TEAM */
+.fac{display:flex;gap:32px;align-items:center;background:#fff;padding:28px;border-radius:6px;box-shadow:0 14px 40px rgba(20,40,32,.12);margin-bottom:64px;border-top:6px solid var(--sun)}
+.fac .ph{flex:0 0 200px;height:240px}
+.fac h3{font-size:1.7rem}
+.fac .role{color:var(--rust);font-weight:700}
+@media(max-width:620px){.fac{flex-direction:column;text-align:center}.fac .ph{flex-basis:auto;width:200px}}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.tab{border:2px solid var(--moss);background:transparent;color:#1c2a25;font:600 1rem var(--body);padding:8px 20px;border-radius:999px;cursor:pointer;transition:.2s}
+.tab:hover{background:rgba(36,73,61,.12)}
+.tab[aria-selected=true]{background:var(--moss);color:var(--snow)}
+.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:24px}
+.m{text-align:center;animation:pop .45s both}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+.ph{position:relative;background:linear-gradient(160deg,var(--moss),var(--pine));overflow:hidden}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.ph.empty::after{content:attr(data-i);position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:2.6rem;color:rgba(255,255,255,.55)}
+.m .ph{aspect-ratio:1;clip-path:polygon(50% 0,100% 100%,0 100%);margin-bottom:10px;transition:transform .3s}
+.m:hover .ph{transform:translateY(-6px) scale(1.04)}
+.fac .ph{border-radius:6px}
+.m b{display:block;font-size:1.05rem}
+.m span{font-size:.92rem;color:#5a6b64}
+
+/* JOIN */
+.join{background:var(--pine);text-align:center;overflow:hidden}
+.join .sec-sub{margin-left:auto;margin-right:auto}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:28px 0;text-align:center;background:var(--night);color:var(--mist);font-size:.92rem}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/logo.png" alt="" onerror="this.style.display='none'">Pahadi Club</a>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu" onclick="this.classList.remove('open')">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#join">Join us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="sun"></div>
+  <div class="cloud" style="top:30%;animation-duration:70s"></div>
+  <div class="cloud" style="top:44%;width:280px;animation-duration:95s;animation-delay:-40s"></div>
+  <div class="cloud" style="top:24%;width:160px;animation-duration:60s;animation-delay:-20s"></div>
+
+  <div class="layer l1" data-speed="0.15"><svg viewBox="0 0 1440 300" preserveAspectRatio="none"><path fill="#6c7a99" d="M0 300V190l120-70 90 50 140-120 120 110 100-60 150 130 130-150 160 130 110-90 120 90 100-60v250z"/><path fill="#fff" opacity=".85" d="M350 50l-40 36 30-14 20 18 20-22zM780 40l-50 50 35-12 25 20 22-24zM1060 20l-40 50 30-12 20 16z"/></svg></div>
+  <div class="layer l2" data-speed="0.3"><svg viewBox="0 0 1440 300" preserveAspectRatio="none"><path fill="#2f4a52" d="M0 300V200l140-80 120 90 160-130 150 120 120-70 170 140 140-100 160 90 140-60 140 70v100z"/></svg></div>
+  <div class="layer l3" data-speed="0.5"><svg viewBox="0 0 1440 260" preserveAspectRatio="none">
+    <path fill="#16302a" d="M0 260V150l90-30 100 40 110-50 120 60 130-40 150 50 120-30 140 40 130-50 140 40 110-20v120z"/>
+    <g fill="#0e1b17">
+      <path id="pn" d="M60 260l22-70 22 70zM90 260l26-90 26 90zM150 260l20-60 20 60zM1200 260l24-80 24 80zM1260 260l18-55 18 55zM1330 260l26-90 26 90zM1390 260l20-60 20 60zM640 260l16-50 16 50zM680 260l22-70 22 70zM300 260l18-55 18 55z"/>
+    </g>
+    <path fill="#0e1b17" d="M0 260v-26c200 6 480-10 720 4s560 8 720-8v30z"/>
+  </svg></div>
+  <canvas id="snow"></canvas>
+
+  <div class="hero-text">
+    <div class="deva">पहाड़ी क्लब स्वागतम्</div>
+    <h1>Pahadi Club</h1>
+    <p>Celebrating the shared soul of Himachal, Uttarakhand &amp; Jammu, we champion their vibrant culture, timeless traditions &amp; joyous festivals with pride.</p>
+    <div class="btns"><a class="btn" href="#events">See our events</a><a class="btn ghost" href="#join">Join the club</a></div>
+  </div>
+</header>
+
+<section class="light" id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <h2 class="sec-title">A little piece of the hills, on campus</h2>
+      <p>Pahadi Club is the VIT Bhopal community for students who come from, or love, the mountain states of Himachal Pradesh, Uttarakhand and Jammu.</p>
+      <p style="margin-top:14px">We celebrate the music, food, clothes, festivals and traditions of the hills, and we invite the whole campus to join in.</p>
+    </div>
+    <div class="states rv">
+      <div class="state"><h3>Himachal</h3><p>Kullu caps, Nati dance and pine-covered valleys.</p></div>
+      <div class="state"><h3>Uttarakhand</h3><p>Garhwali and Kumaoni songs, Uttarayani and Harela.</p></div>
+      <div class="state"><h3>Jammu</h3><p>Dogri culture, folk music and winter festivals.</p></div>
+    </div>
+  </div>
+</section>
+<div class="pattern"></div>
+
+<section class="events" id="events">
+  <div class="wrap">
+    <h2 class="sec-title rv">Our events</h2>
+    <p class="sec-sub rv">Festivals, carnivals and cultural evenings we have organised so far.</p>
+    <div class="ev-grid" id="evgrid">
+      <article class="ev rv">
+        <div class="ph empty" data-i="&#9968;">
+          <img src="images/events/Kauthik-1.0.png" alt="Kauthik 1.0 poster" onerror="this.remove()">
+        </div>
+        <div class="info">
+          <h3>Kauthik 1.0</h3>
+          <p>A Pine &amp; Peak Carnival, held as part of Aaditya 2025. Open DJ, souvenir stalls, games, a cultural extravaganza, a traditional photo booth and art &amp; craft workshops.</p>
+        </div>
+      </article>
+
+      <article class="ev rv">
+        <div class="ph empty" data-i="&#9968;">
+          <img src="images/events/Kauthik-2.0.png" alt="Kauthik 2.0 poster" onerror="this.remove()">
+        </div>
+        <div class="info">
+          <h3>Kauthik 2.0</h3>
+          <p>The second edition of our carnival, with colourful decor, music and a campus-wide crowd.</p>
+        </div>
+      </article>
+
+      <article class="ev rv">
+        <div class="ph empty" data-i="&#9968;">
+          <img src="images/events/Uttarayani.png" alt="Uttrayani Mela poster" onerror="this.remove()">
+        </div>
+        <div class="info">
+          <h3>Uttrayani Mela</h3>
+          <p>A celebration of the spirit of the hills, with traditional dress, folk music and food.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<div class="pattern"></div>
+
+<section class="light" id="team">
+  <div class="wrap">
+    <h2 class="sec-title rv">The people behind the club</h2>
+    <p class="sec-sub rv">Our faculty coordinator guides the club, and student leads run each team.</p>
+
+    <div class="fac rv">
+      <div class="ph empty" data-i="FC" style="flex:0 0 200px;height:240px"><img src="images/team/faculty-coordinator.jpg" alt="Faculty Coordinator" onerror="this.remove()"></div>
+      <div>
+        <div class="role">Faculty Coordinator</div>
+        <h3>Faculty Name</h3>
+        <p style="margin-top:8px;color:#4b5b55">School / Department, VIT Bhopal</p>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="members" id="members" role="tabpanel"></div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <h2 class="sec-title rv">Come climb with us</h2>
+    <p class="sec-sub rv">Anyone at VIT Bhopal can join, whether you are from the hills or just love them. Follow us for updates and recruitment news.</p>
+    <div class="links rv">
+      <a class="btn" href="https://www.instagram.com/pahadi_club.vitbhopal" target="_blank" rel="noopener">Follow on Instagram</a>
+      <a class="btn ghost" href="mailto:pahadiclub@vitbhopal.ac.in">Email us</a>
+    </div>
+  </div>
+</section>
+
+<footer>Pahadi Club, VIT Bhopal University. Made with love for the hills.</footer>
+
+<script>
+/* ---------- EDIT YOUR CONTENT HERE ---------- */
+const TEAMS={
+  "Main Members":[["President Name","President"],["Vice President Name","Vice President"],["Secretary Name","General Secretary"],["Student Coordinator Name","Student Coordinator"],["Student Coordinator Name","Student Coordinator"]],
+  "Technical":[["Name","Technical Lead"],["Name","Technical Co-Lead"],["Name","Member"],["Name","Member"],["Name","Member"]],
+  "Design":[["Name","Design Lead"],["Name","Design Co-Lead"],["Name","Member"],["Name","Member"],["Name","Member"]],
+  "Events":[["Name","Events Lead"],["Name","Events Co-Lead"],["Name","Member"],["Name","Member"],["Name","Member"]],
+  "Media & PR":[["Name","Media Lead"],["Name","Media Co-Lead"],["Name","Member"],["Name","Member"],["Name","Member"]],
+  "Cultural":[["Name","Cultural Lead"],["Name","Cultural Co-Lead"],["Name","Member"],["Name","Member"],["Name","Member"]]
+};
+/* Photos go in images/team/<team>-<number>.jpg, e.g. images/team/design-1.jpg */
+/* -------------------------------------------- */
+
+const slug=s=>s.toLowerCase().replace(/[^a-z]+/g,'-').replace(/^-|-$/g,'');
+
+const tabs=document.getElementById('tabs'),box=document.getElementById('members');
+function show(team){
+  [...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.textContent===team));
+  box.innerHTML=TEAMS[team].map((m,i)=>`
+   <div class="m" style="animation-delay:${i*70}ms"><div class="ph empty" data-i="${m[0].trim()[0]||'?'}">
+   <img src="images/team/${slug(team)}-${i+1}.jpg" alt="${m[0]}" onerror="this.remove()"></div>
+   <b>${m[0]}</b><span>${m[1]}</span></div>`).join('');
+}
+Object.keys(TEAMS).forEach((t,i)=>{
+  const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=t;
+  b.onclick=()=>show(t);tabs.appendChild(b);
+});
+show(Object.keys(TEAMS)[0]);
+
+/* nav + parallax */
+const nav=document.getElementById('nav'),layers=document.querySelectorAll('.layer');
+addEventListener('scroll',()=>{
+  const y=scrollY;nav.classList.toggle('solid',y>60);
+  if(y<innerHeight)layers.forEach(l=>l.style.transform=`translateY(${y*l.dataset.speed*0.4}px)`);
+},{passive:true});
+
+/* scroll reveal (static elements; cards added by JS are observed too) */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* falling snow */
+const cv=document.getElementById('snow'),cx=cv.getContext('2d');let W,H,fl=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;fl=Array.from({length:Math.min(110,W/12|0)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2.4+.6,s:Math.random()*.8+.3,p:Math.random()*6}))}
+size();addEventListener('resize',size);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)(function f(){
+  cx.clearRect(0,0,W,H);cx.fillStyle='rgba(255,255,255,.8)';
+  fl.forEach(o=>{o.y+=o.s;o.p+=.01;o.x+=Math.sin(o.p)*.4;if(o.y>H){o.y=-5;o.x=Math.random()*W}
+    cx.beginPath();cx.arc(o.x,o.y,o.r,0,6.3);cx.fill()});
+  requestAnimationFrame(f);
+})();
+</script>
+</body>
+</html>
